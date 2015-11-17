@@ -1,0 +1,40 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'run', 'tsc' ]
+2 info using npm@3.3.9
+3 info using node@v0.12.5
+4 verbose run-script [ 'pretsc', 'tsc', 'posttsc' ]
+5 info lifecycle angular2-tour-of-heroes@0.0.1~pretsc: angular2-tour-of-heroes@0.0.1
+6 silly lifecycle angular2-tour-of-heroes@0.0.1~pretsc: no script for pretsc, continuing
+7 info lifecycle angular2-tour-of-heroes@0.0.1~tsc: angular2-tour-of-heroes@0.0.1
+8 verbose lifecycle angular2-tour-of-heroes@0.0.1~tsc: unsafe-perm in lifecycle true
+9 verbose lifecycle angular2-tour-of-heroes@0.0.1~tsc: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/josepheames/Projects/angular2/family-todo-ng/node_modules/.bin:/usr/local/heroku/bin:/usr/local/bin:.:~/.bin:/Applications/Postgres.app/Contents/MacOS/bin:/Users/josepheames/Library/Haskell/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/Cellar/mongodb/2.4.6/bin
+10 verbose lifecycle angular2-tour-of-heroes@0.0.1~tsc: CWD: /Users/josepheames/Projects/angular2/family-todo-ng
+11 silly lifecycle angular2-tour-of-heroes@0.0.1~tsc: Args: [ '-c', 'tsc -p src -w' ]
+12 silly lifecycle angular2-tour-of-heroes@0.0.1~tsc: Returned: code: 1  signal: null
+13 info lifecycle angular2-tour-of-heroes@0.0.1~tsc: Failed to exec tsc script
+14 verbose stack Error: angular2-tour-of-heroes@0.0.1 tsc: `tsc -p src -w`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:233:16)
+14 verbose stack     at EventEmitter.emit (events.js:110:17)
+14 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+14 verbose stack     at ChildProcess.emit (events.js:110:17)
+14 verbose stack     at maybeClose (child_process.js:1015:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1087:5)
+15 verbose pkgid angular2-tour-of-heroes@0.0.1
+16 verbose cwd /Users/josepheames/Projects/angular2/family-todo-ng
+17 error Darwin 13.4.0
+18 error argv "node" "/usr/local/bin/npm" "run" "tsc"
+19 error node v0.12.5
+20 error npm  v3.3.9
+21 error code ELIFECYCLE
+22 error angular2-tour-of-heroes@0.0.1 tsc: `tsc -p src -w`
+22 error Exit status 1
+23 error Failed at the angular2-tour-of-heroes@0.0.1 tsc script 'tsc -p src -w'.
+23 error This is most likely a problem with the angular2-tour-of-heroes package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     tsc -p src -w
+23 error You can get their info via:
+23 error     npm owner ls angular2-tour-of-heroes
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]
