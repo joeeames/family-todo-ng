@@ -14,4 +14,5 @@ export class IdentityService {
   isLoggedIn() {
     return !!this.currentIdentity;
   }
+
 }

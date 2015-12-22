@@ -1,17 +1,15 @@
-export const IDENTITIES = {
-  Jen: {name: 'Jen', id: 1},
-  Joe: {name: 'Joe', id: 2}
-}
+import {Home} from './home';
+import {Login} from './login';
+import {Route} from 'angular2/router';
 
-
-export class IdentityService {
-  public currentIdentity:string ;
-
-  setIdentity(userName) {
-    this.currentIdentity = IDENTITIES[userName];
-  }
-
-  isLoggedIn() {
-    return !!this.currentIdentity;
+export class AppRoutes2 {
+  public routes = {
+      Home: { path: '/', as: 'Home', component: Home },
+      Login: { path: '/login' , as: 'Login', component: Login}    
   }
 }
+
+export const APP_ROUTES2 = [
+    { path: '/', as: 'Home', component: Home },
+  { path: '/login' , as: 'Login', component: Login}
+]

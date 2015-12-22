@@ -4,7 +4,6 @@ import {TodoService} from './todoService';
 import {IdentityService} from './identityService';
 import {Header} from './header';
 import {AppRoutes, APP_ROUTES} from './routes';
-console.log(2, AppRoutes);
 @Component({
   selector: 'app',
 
@@ -27,8 +26,8 @@ console.log(2, AppRoutes);
 })
 @RouteConfig(APP_ROUTES)
 export class App {
-  public routes = new AppRoutes().routes
-}
-// console.log('approutes', new AppRoutes());
+  public routes = AppRoutes;
 
-bootstrap(App, [ROUTER_PROVIDERS, TodoService, IdentityService, AppRoutes]);
+}
+
+bootstrap(App, [ROUTER_PROVIDERS, TodoService, IdentityService]);

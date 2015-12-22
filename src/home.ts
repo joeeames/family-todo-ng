@@ -1,12 +1,8 @@
 import {Component, View, NgFor} from 'angular2/angular2';
 import {TodoService} from "./todoService";
 import {Router} from 'angular2/router';
-import * as Joe from './routes';
-// import {IdentityService} from './moreRoutes';
-
+import {AppRoutes} from './routes';
 import {IdentityService} from './identityService';
-
-console.log(1, Joe);
 
 @Component({
   selector: 'home',
@@ -26,14 +22,13 @@ export class Home {
   todos:any;
   constructor(todoService:TodoService, 
       private identityService: IdentityService, 
-      private router: Router,
-      private routes: AppRoutes) {
-    this.todos = todoService.todos;
+      private router: Router) {
+    console.log('constructing home');
+    this.todos = todoService.getTodosFor(this.identityService.currentIdentity);
+    console.log('todos', this.todos);
 
-    // if not logged in, redirect
-    console.log('logged in', !this.identityService.isLoggedIn())
     if(!this.identityService.isLoggedIn()) {
-      // this.router.navigate([this.appRoutes.routes.Login.as])
+      this.router.navigate([AppRoutes.Login.as])
     }
   }
 }

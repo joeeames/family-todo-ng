@@ -2,7 +2,7 @@
   "name": "angular2-tour-of-heroes",
   "version": "0.0.1",
   "scripts": {
-    "tsc": "tsc -p src -w",
+    "tsc": "tsc -p src -w --outDir dist",
     "start": "live-server"
   },
   "dependencies": {

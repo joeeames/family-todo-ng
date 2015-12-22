@@ -1,8 +1,8 @@
 import {Component, View} from 'angular2/angular2';
 import {Router} from 'angular2/router';
 import {AppRoutes} from './routes';
-
 import {IdentityService} from './identityService';
+
 
 @Component({
   selector: 'login',
@@ -18,14 +18,14 @@ import {IdentityService} from './identityService';
 
 })
 export class Login {
-  constructor(private identityService: IdentityService, private router: Router, private appRoutes: AppRoutes) {
+  constructor(private identityService: IdentityService, private router: Router) {
 
   }
 
   setIdentity(userName) {
     this.identityService.setIdentity(userName);
     console.log('identity set to ' + userName);
-    // this.router.navigate([this.appRoutes.routes.Home.as])
+    this.router.navigate([AppRoutes.Home.as])
   }
 }
 
