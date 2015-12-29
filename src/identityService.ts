@@ -9,6 +9,7 @@ export class IdentityService {
 
   setIdentity(userName) {
     this.currentIdentity = IDENTITIES[userName];
+    this.name = this.currentIdentity.name;
   }
 
   isLoggedIn() {
@@ -17,6 +18,7 @@ export class IdentityService {
   
   logout() {
       this.currentIdentity = null;
+      this.name = null;
   }
 
 }

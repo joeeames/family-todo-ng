@@ -1,9 +1,8 @@
 import {Component, View} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
-import {ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouterOutlet, RouteConfig} from 'angular2/router';
-import {TodoService} from './todoService';
+import {ROUTER_DIRECTIVES, RouterOutlet, RouteConfig} from 'angular2/router';
 import {IdentityService} from './identityService';
-import {Header} from './header';
+import {AppHeader} from './app-header';
 import {AppRoutes, APP_ROUTES} from './routes';
 import {Router} from 'angular2/router';
 
@@ -14,34 +13,20 @@ import {Router} from 'angular2/router';
 @View({
   template: `
     <div>
-      <header></header>
+      <app-header></app-header>
       <main>
         <router-outlet></router-outlet>
       </main>
-
-    <a [router-link]="[routes.Home.as]" class="router-link">Home</a>
-    <a [router-link]="[routes.Login.as]" class="router-link">Login</a>
-    <a href="" (click)="logout($event)" class="router-link">Logout</a>
-    <router-outlet></router-outlet>
-          </div>
+    </div>
   `,
-  directives: [Header, ROUTER_DIRECTIVES]
+  directives: [AppHeader, ROUTER_DIRECTIVES]
 
 })
 @RouteConfig(APP_ROUTES)
 export class App {
-  public routes = AppRoutes;
   
-  constructor(private identityService: IdentityService, private router: Router) {
-      this.identityService = identityService;
+  constructor() {
   }
   
-  logout(e) {
-    e.preventDefault()
-    this.identityService.logout();
-    this.router.navigate([AppRoutes.Login.as])
-  }
 
 }
-
-bootstrap(App, [ROUTER_PROVIDERS, TodoService, IdentityService]);

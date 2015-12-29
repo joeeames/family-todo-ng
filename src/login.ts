@@ -1,4 +1,4 @@
-import {Component, View} from 'angular2/angular2';
+import {Component, View} from 'angular2/core';
 import {Router} from 'angular2/router';
 import {AppRoutes} from './routes';
 import {IdentityService} from './identityService';
@@ -24,7 +24,6 @@ export class Login {
 
   setIdentity(userName) {
     this.identityService.setIdentity(userName);
-    console.log('identity set to ' + userName);
     this.router.navigate([AppRoutes.Home.as])
   }
   
