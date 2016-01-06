@@ -1,8 +1,8 @@
 import {Component, View} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouterOutlet, RouteConfig} from 'angular2/router';
-import {IdentityService} from './identityService';
+import {IdentityService} from './services/identityService';
 import {Router} from 'angular2/router';
-import {AppRoutes, APP_ROUTES} from './routes';
+// import {AppRoutes, APP_ROUTES} from './routes';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +13,7 @@ import {AppRoutes, APP_ROUTES} from './routes';
       <div class="container-fluid">
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a [routerLink]="[routes.Home.as]" class="router-link">Home</a></li>
+            <li><a [routerLink]="['Home']" class="router-link">Home</a></li>
           </ul>
           
           <ul class="nav navbar-nav navbar-right">
@@ -30,7 +30,7 @@ import {AppRoutes, APP_ROUTES} from './routes';
               </ul>
             </li>
             <li *ngIf="!identityService.isLoggedIn()">
-              <a [routerLink]="[routes.Login.as]" class="router-link">Login</a>
+              <a [routerLink]="['Login']" class="router-link">Login</a>
             </li>
           </ul>
         </div>
@@ -41,7 +41,7 @@ import {AppRoutes, APP_ROUTES} from './routes';
 
 })
 export class AppHeader {
-  public routes = AppRoutes;
+  // public routes = AppRoutes;
   public y = true;
 
   constructor(private identityService: IdentityService, private router: Router) {
@@ -51,7 +51,7 @@ export class AppHeader {
   logout(e) {
     e.preventDefault()
     this.identityService.logout();
-    this.router.navigate([AppRoutes.Login.as])
+    this.router.navigate(['Login'])
   }
 }
 

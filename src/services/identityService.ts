@@ -1,7 +1,9 @@
-export const IDENTITIES = {
-  Jen: {name: 'Jen', id: 1},
-  Joe: {name: 'Joe', id: 2}
-}
+import {IDENTITIES} from './identities';
+
+// export const IDENTITIES = {
+//   Jen: {name: 'Jen', id: 1},
+//   Joe: {name: 'Joe', id: 2}
+// }
 
 
 export class IdentityService {

@@ -11,4 +11,8 @@ export class TodoService {
       return i.assignee === null || !!user && i.assignee === user.name
     });
   }
+  
+  addTodo(text, user) {
+    this.todos.push({title: text, completed: false, assignee: user});
+  }
 }
