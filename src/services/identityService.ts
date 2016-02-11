@@ -7,7 +7,8 @@ import {IDENTITIES} from './identities';
 
 
 export class IdentityService {
-  public currentIdentity:string ;
+  public currentIdentity:any;
+  public name:string;
 
   setIdentity(userName) {
     this.currentIdentity = IDENTITIES[userName];

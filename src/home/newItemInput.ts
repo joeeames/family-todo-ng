@@ -7,9 +7,11 @@ import {IdentityService} from '../services/identityService';
 })
 @View({
   template: `
-      <input #newitemEl type="text" [(ngModel)]="newValue" placeholder="description" >
-      <input #assigneeEl type="text" [(ngModel)]="assignee" placeholder="assigned to" >
-      <button (click)="addNewItem(newitemEl, assigneeEl)">Add</button>
+    <form class="form-inline">
+      <input #newitemEl type="text" [(ngModel)]="newValue" placeholder="description" class="form-control" >
+      <input #assigneeEl type="text" [(ngModel)]="assignee" placeholder="assigned to"  class="form-control">
+      <button (click)="addNewItem(newitemEl, assigneeEl)" class="btn btn-primary">Add</button>
+    </form>
   `
 })
 export class NewItemInput {

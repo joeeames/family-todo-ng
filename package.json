@@ -7,7 +7,8 @@
     "tsc": "tsc",
     "tsc:w": "tsc -w --outDir dist",
     "lite": "lite-server",
-    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" "
+    "http": "http-server",
+    "start": "concurrent \"npm run tsc:w\" \"npm run http\" "
   },
   "dependencies": {
     "angular2": "^2.0.0-beta.0",

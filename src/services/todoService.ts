@@ -13,6 +13,8 @@ export class TodoService {
   }
   
   addTodo(text, user) {
-    this.todos.push({title: text, completed: false, assignee: user});
+    var newTodo = {title: text, completed: false, assignee: user};
+    // this.todos.push(newTodo);
+    this.todos = this.todos.concat([newTodo]);
   }
 }

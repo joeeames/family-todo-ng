@@ -2,27 +2,35 @@ import {Pipe} from 'angular2/core';
 
 @Pipe({
   name: 'userFilter',
-  pure: false
+  pure: true
 })
 export class UserFilterPipe {
-  private retval;
   
   transform(value, [username]) {
     console.log('checking pipe', value);
-    var newRetval = value.filter(i => {
+    return value.filter(i => {
       return i.assignee === null || !!username && i.assignee === username
     });
-    
-    // console.log('newRetVal')
-    if(!newRetval || !this.retval || newRetval.length !== this.retval.length) {
-      console.log('updating retval');
-      this.retval = newRetval;
-    }
-    
-    console.log('retval', this.retval);
-    return this.retval;
-    
   }
+  
+  // private retval;
+  
+  // transform(value, [username]) {
+  //   console.log('checking pipe', value);
+  //   var newRetval = value.filter(i => {
+  //     return i.assignee === null || !!username && i.assignee === username
+  //   });
+    
+  //   // console.log('newRetVal')
+  //   if(!newRetval || !this.retval || newRetval.length !== this.retval.length) {
+  //     console.log('updating retval');
+  //     this.retval = newRetval;
+  //   }
+    
+  //   console.log('retval', this.retval);
+  //   return this.retval;
+    
+  // }
 }
 
 
