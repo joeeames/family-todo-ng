@@ -6,13 +6,8 @@ import {ItemList} from './itemList';
 @Component({
   selector: 'home',
 
-  //
-      
   template: `
     <h1>Family Todo App</h1>
-    
-    
-    <new-item-input></new-item-input>
     <item-list></item-list>
   `,
   directives: [ItemList]

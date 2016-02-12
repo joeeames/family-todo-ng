@@ -1,4 +1,4 @@
-import {Component, View} from 'angular2/core';
+import {Component, View, Output, EventEmitter} from 'angular2/core';
 import {TodoService} from "../services/todoService";
 import {IdentityService} from '../services/identityService';
 
@@ -17,6 +17,7 @@ import {IdentityService} from '../services/identityService';
 export class NewItemInput {
   newValue:string;
   assignee:string;
+  @Output('newItemAdded') newItemAdded = new EventEmitter();
   
   constructor(private todoService:TodoService) {
     
@@ -24,9 +25,9 @@ export class NewItemInput {
   
   addNewItem(newItemEl, assigneeEl) {
     this.todoService.addTodo(this.newValue, this.assignee);
-    console.log(this.todoService.todos);
     newItemEl.value = "";
     assigneeEl.value = "";
+    this.newItemAdded.emit("event");
   }
 }
 
